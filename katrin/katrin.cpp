@@ -50,18 +50,25 @@ void massiv() {
 	{
 		std::cout << r[y] << "\n";
 	}*/
-	
+
 
 	int a[5]{ -7, 5, 1, -2, 9 };
-	
 
-	char t[4]{ 'r','e','a','d' };
+	for (int g = 0; g < 5; g++)
+	{
+		if (0 > a[g]) {
+			std::cout << a[g] << " ";
+		}
+	}
 
-	for (int q = 0; q < 4; q++) 
+
+	/*char t[4]{ 'r','e','a','d' };
+
+	for (int q = 0; q < 4; q++)
 	{
 
 		std::cout << t[q];
-    }
+	}
 
 
 
@@ -74,8 +81,8 @@ void massiv() {
 		std::cout << s[d] << " ";
 	}
 
+*/
 }
-
 
 void game() {
 
