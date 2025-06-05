@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <string>
 
 
 void  randomnamber() {
@@ -36,12 +37,49 @@ void  randomnamber() {
 
 
 }
+void massiv() {
 
+
+
+	/*int r[3];
+	r[0] = 5;
+	r[1] = 8;
+	r[2] = 94;
+
+	for (int y = 0; y < 3; y++)
+	{
+		std::cout << r[y] << "\n";
+	}*/
+	
+
+	int a[5]{ -7, 5, 1, -2, 9 };
+	
+
+	char t[4]{ 'r','e','a','d' };
+
+	for (int q = 0; q < 4; q++) 
+	{
+
+		std::cout << t[q];
+    }
+
+
+
+	std::string s[2];
+	s[0] = "hello";
+	s[1] = "world!";
+
+	for (int d = 0; d < 2; d++) {
+
+		std::cout << s[d] << " ";
+	}
+
+}
 
 
 void game() {
 
-	 //1 rock
+	 // 1rock
 	 // 2scissors
 	 // 3paper
 
@@ -81,6 +119,10 @@ void game() {
 
 	}
 
+	
+
+
+
 
 
 
@@ -92,6 +134,5 @@ int main() {
 	srand(time(0));
 
 
-	game();
-
+	massiv();
 }
