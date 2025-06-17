@@ -1,4 +1,4 @@
-// katrin.cpp : This file contains the 'main' function. Program execution begins and ends there.
+п»ї// katrin.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -93,31 +93,39 @@ void massiv() {
 
 
 void durak() {
-	std::string user;
-	std::string a[20]{ "1буби","2буби","3буби","4буби","5буби","1крести","2крести","3крести","4крести","5крести" ,"1пики","2пики","3пики","4пики","5пики",
-		"1черви","2черви","3черви","4черви","5черви" }; //буби 
-	//std::string b[5]{ "1крести","2крести","3крести","4крести","5крести" }; //крести 
-	//std::string c[5]{ "1пики","2пики","3пики","4пики","5пики" }; //пики 
-	//std::string d[5]{ "1черви","2черви","3черви","4черви","5черви" }; //черви 
-	for (int i = 0;i < 1;)
+	
+	std::string a[5]{ "six","seven","eight","nine","ten",};
+
+	int r = rand() % 5;
+	std::cout << a[r] << std::endl;
+
+	int bot = rand() % 5;
+	std::cout << a[bot] << std::endl;
+
+	for (int i = 0; i < 1; i++)
 	{
-		int user;
+		
 
-		int r = rand() % 20;
-		std::cout << a[r] << std::endl;
+		if (r > bot){
 
-		for (int i = 0; i < 1; i++)
-		{
-			int bot = rand() % 20;
-			std::cin >> user;
+			std::cout << "you win\n";
 
-			std::cout << bot;
+		}else if (r == bot) {
 
-
+			std::cout << "draw\n";
 
 		}
+		else {
+
+			std::cout << "you lose\n";
+
+		}
+
+
 	}
+
 }
+
 
 
 void game() {
@@ -185,5 +193,37 @@ void start() {
 int main() {
 	srand(time(0));
 
-	start();
+	durak();
+
+	// durak();
+
+	//int a[5]{ 7, -8, -1, 2, 4 };
+	//
+	//for (int i = 0; i < 5; i++) {
+	//
+	//	// a[i] *= -1;
+	//	// std::cout << a[i] << "\n";
+
+
+	///*	if (0 > a[i]) {
+	//		a[i] *= -1;
+	//	}
+	//	std::cout << a[i] << "\n";*/
+
+	//	if (0 < a[i]) {
+	//		a[i] *= -1;
+	//	}
+	//	std::cout << a[i] << "\n";
+
+	//}
+
+
+
+	/*int s = -9;
+	
+	s *= -1;
+	std::cout << s;*/
+
+	
+
 }
