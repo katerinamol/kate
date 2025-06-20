@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include<locale>
 
 void start();
 void game();
@@ -94,35 +95,63 @@ void massiv() {
 
 void durak() {
 	
-	std::string a[5]{ "six","seven","eight","nine","ten",};
-
-	int r = rand() % 5;
-	std::cout << a[r] << std::endl;
-
-	int bot = rand() % 5;
-	std::cout << a[bot] << std::endl;
-
-	for (int i = 0; i < 1; i++)
-	{
+	std::string a[10][4]
+	{   "worms","cross","peaks","diamonds",
+		"six","six","six","six",
+		"seven","seven","seven","seven",
+		"eight","eight","eight","eight",
+		"nine","nine","nine","nine",
+		"ten","ten","ten","ten",
+		"jack ","jack ","jack ","jack ",
+		"queen","queen","queen","queen",
+		"king","king","king","king",
+		"ace","ace","ace","ace"
 		
+		
+	};
+	
 
-		if (r > bot){
 
-			std::cout << "you win\n";
+	/*for (int i = 0; i < 10; i++) {
+ 
+		for (int j = 0; j < 4; j++) {
 
-		}else if (r == bot) {
-
-			std::cout << "draw\n";
-
+			std::cout << a[i][j] << " ";
 		}
-		else {
+		std::cout << std::endl;
+	}*/
 
-			std::cout << "you lose\n";
-
-		}
+	
 
 
-	}
+
+	//int r = rand() % 5;
+	//std::cout << a[r] << std::endl;
+
+	//int bot = rand() % 5;
+	//std::cout << a[bot] << std::endl;
+
+	//for (int i = 0; i < 1; i++)
+	//{
+	//	
+
+	//	if (r > bot){
+
+	//		std::cout << "you win\n";
+
+	//	}else if (r == bot) {
+
+	//		std::cout << "draw\n";
+
+	//	}
+	//	else {
+
+	//		std::cout << "you lose\n";
+
+	//	}
+
+
+	//}
 
 }
 
@@ -192,9 +221,11 @@ void start() {
  
 int main() {
 	srand(time(0));
-
+	std::locale::global(std::locale("en_US.UTF-8"));
+	//setlocale(LC_ALL, "UTF-8");
 	durak();
-
+	/*char x = 5;
+	std::cout << x;*/
 	// durak();
 
 	//int a[5]{ 7, -8, -1, 2, 4 };
