@@ -3,7 +3,37 @@
 
 #include <iostream>
 #include <string>
-#include<locale>
+#include<cstdlib>
+#include <vector>
+
+using namespace std;
+struct a {
+    string name;
+	double age;
+	string pol;
+	string naty;
+
+	a(string a, double x, string p) {
+
+		name = a;
+		age = x;
+		pol = p;
+		
+	}
+
+	a(string a, double x) : name(a), age(x), pol("TEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"){}
+
+	a(string a) : name(a), age (1000) , pol ("govno") {}
+
+	a() {
+		name = "GOVNO"; 
+		age = 1;
+		pol = "HELECOPTER";
+
+	}
+
+	a(string a, double x, string p, string naty): name(a),age (x), pol (p), naty (naty) {}
+};
 
 void start();
 void game();
@@ -218,43 +248,21 @@ void start() {
 }
 
 
+
+
+
+
+
  
 int main() {
 	srand(time(0));
 	std::locale::global(std::locale("en_US.UTF-8"));
 	//setlocale(LC_ALL, "UTF-8");
-	durak();
-	/*char x = 5;
-	std::cout << x;*/
-	// durak();
-
-	//int a[5]{ 7, -8, -1, 2, 4 };
-	//
-	//for (int i = 0; i < 5; i++) {
-	//
-	//	// a[i] *= -1;
-	//	// std::cout << a[i] << "\n";
-
-
-	///*	if (0 > a[i]) {
-	//		a[i] *= -1;
-	//	}
-	//	std::cout << a[i] << "\n";*/
-
-	//	if (0 < a[i]) {
-	//		a[i] *= -1;
-	//	}
-	//	std::cout << a[i] << "\n";
-
-	//}
-
-
-
-	/*int s = -9;
-	
-	s *= -1;
-	std::cout << s;*/
-
 	
 
+
+	
+	
 }
+	
+
