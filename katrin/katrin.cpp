@@ -37,6 +37,18 @@ struct info {
 };
 
 
+struct shop {
+	string goods;
+	double price;
+	double quantity;
+
+	shop(string g, double p, double q) {
+		goods = g;
+		price = p;
+		quantity = q;
+
+	}
+};
 
 
 
@@ -58,7 +70,7 @@ int main() {
 		
 		std::cout << mas[i].name << " " << mas[i].age << " " << mas[i].pol << " " << mas[i].naty << "\n";
 	}*/
-	vector<info> user;
+	/*vector<info> user;
 	user.push_back(info());
 	user.push_back({"katrin",18,"woman", "russian"});
 	user.push_back(info("dasha", 25, "woman", "russian"));
@@ -66,11 +78,18 @@ int main() {
 
 	for (int i = 0; i < user.size(); i++) {
 		std::cout << user[i].name << " " << user[i].age << " " << user[i].pol << " " << user[i].naty << "\n";
+	}*/
+
+	vector<shop> y;
+	y.push_back({ "banana",20,40 });
+	y.push_back({ "apples",15,60 });
+	y.push_back({ "oranges",25,35 });
+	y.push_back({ "grape",20,40 });
+
+	for (int i = 0 ; i < y.size(); i++) {
+
+		std::cout << y[i].goods << " " << y[i].price << " " << y[i].quantity << "\n";
 	}
-
-	
-
-	
 	
 }
 	
