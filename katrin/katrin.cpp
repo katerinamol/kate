@@ -7,33 +7,37 @@
 #include <vector>
 
 using namespace std;
-struct a {
+
+struct info {
     string name;
 	double age;
 	string pol;
 	string naty;
 
-	a(string a, double x, string p) {
+	info(string info, double x, string p) {
 
-		name = a;
+		name = info;
 		age = x;
 		pol = p;
 		
 	}
 
-	a(string a, double x) : name(a), age(x), pol("TEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"){}
+	info(string a, double x) : name(a), age(x), pol("TEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"){}
 
-	a(string a) : name(a), age (1000) , pol ("govno") {}
+	info(string a) : name(a), age (1000) , pol ("govno") {}
 
-	a() {
+	info() {
 		name = "GOVNO"; 
 		age = 1;
 		pol = "HELECOPTER";
 
 	}
 
-	a(string a, double x, string p, string naty): name(a),age (x), pol (p), naty (naty) {}
+	info(string a, double x, string p, string naty): name(a),age (x), pol (p), naty (naty) {}
 };
+
+
+
 
 void start();
 void game();
@@ -258,8 +262,23 @@ int main() {
 	srand(time(0));
 	std::locale::global(std::locale("en_US.UTF-8"));
 	//setlocale(LC_ALL, "UTF-8");
-	
+	/*info mas[4]{ {"test", 2, "PORNO", "UZBEK"}, info("katrin",18), info("kolya", 20, "man"), info("dasha",25,"woman","russian")};
 
+	for (int i = 0; i < 4; i++) {
+		
+		std::cout << mas[i].name << " " << mas[i].age << " " << mas[i].pol << " " << mas[i].naty << "\n";
+	}*/
+	vector<info> user;
+	user.push_back(info());
+	user.push_back({"katrin",18,"woman", "russian"});
+	user.push_back(info("dasha", 25, "woman", "russian"));
+	user.push_back(info("test", 2, "PORNO", "UZBEK"));
+
+	for (int i = 0; i < user.size(); i++) {
+		std::cout << user[i].name << " " << user[i].age << " " << user[i].pol << " " << user[i].naty << "\n";
+	}
+
+	
 
 	
 	
