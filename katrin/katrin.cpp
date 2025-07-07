@@ -38,21 +38,31 @@ struct info {
 
 
 struct shop {
-	string goods;
-	double price;
-	double quantity;
+	string name;
+	int price;
+	double count;
 
-	shop(string g, double p, double q) {
-		goods = g;
+	shop(string g,int p, double q) {
+		name = g;
 		price = p;
-		quantity = q;
+		count = q;
 
 	}
 };
 
+	vector<shop> goods;
 
-
-	
+//void i() {
+//	int wallet = 500;
+//	std::cout << wallet << "\n" ;
+//
+//	string user;
+//	std::cin >> user ;
+//	if (user >= ) {
+//
+//	}
+//
+//}
 
 
 
@@ -63,11 +73,13 @@ struct shop {
 int main() {
 	srand(time(0));
 	std::locale::global(std::locale("en_US.UTF-8"));
+
+
 	//setlocale(LC_ALL, "UTF-8");
 	/*info mas[4]{ {"test", 2, "PORNO", "UZBEK"}, info("katrin",18), info("kolya", 20, "man"), info("dasha",25,"woman","russian")};
 
 	for (int i = 0; i < 4; i++) {
-		
+
 		std::cout << mas[i].name << " " << mas[i].age << " " << mas[i].pol << " " << mas[i].naty << "\n";
 	}*/
 	/*vector<info> user;
@@ -80,17 +92,33 @@ int main() {
 		std::cout << user[i].name << " " << user[i].age << " " << user[i].pol << " " << user[i].naty << "\n";
 	}*/
 
-	vector<shop> y;
-	y.push_back({ "banana",20,40 });
-	y.push_back({ "apples",15,60 });
-	y.push_back({ "oranges",25,35 });
-	y.push_back({ "grape",20,40 });
 
-	for (int i = 0 ; i < y.size(); i++) {
+	goods.push_back({ "banana", 20, 30 });
+	goods.push_back({ "appless", 35 , 20 });
+	goods.push_back({ "oranges", 25, 15 });
+	goods.push_back({ "grape", 15, 25 });
 
-		std::cout << y[i].goods << " " << y[i].price << " " << y[i].quantity << "\n";
+	for (int i = 0; i < goods.size(); i++)
+	{
+		std::cout << goods[i].name << " " << goods[i].price << " " << goods[i].count << "\n";
+
 	}
-	
-}
-	
 
+
+	int wallet = 500;
+	std::cout << wallet << "\n";
+
+	string user;
+	std::cin >> user;
+	for (int i = 0; i < goods.size(); i++)
+		if (user == goods[i].name)
+		{
+			std::cout << "Yes, it is in stock";
+			break;
+		}
+		else {
+			std::cout << "Sorry, but we don't have this in stock";
+
+		}
+
+}
