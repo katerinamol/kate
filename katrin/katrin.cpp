@@ -48,10 +48,17 @@ struct shop {
 		count = q;
 
 	}
+
+	shop() {
+		name = "govno";
+		price = 5;
+	
+	
+	};
 };
 
 	vector<shop> goods;
-
+	//string g, int p, double q;
 //void i() {
 //	int wallet = 500;
 //	std::cout << wallet << "\n" ;
@@ -63,7 +70,6 @@ struct shop {
 //	}
 //
 //}
-
 
 
 
@@ -92,12 +98,11 @@ int main() {
 		std::cout << user[i].name << " " << user[i].age << " " << user[i].pol << " " << user[i].naty << "\n";
 	}*/
 
-
 	goods.push_back({ "banana", 20, 30 });
 	goods.push_back({ "appless", 35 , 20 });
 	goods.push_back({ "oranges", 25, 15 });
 	goods.push_back({ "grape", 15, 25 });
-
+	goods.push_back({ "chizz", 0 , 200 });
 	for (int i = 0; i < goods.size(); i++)
 	{
 		std::cout << goods[i].name << " " << goods[i].price << " " << goods[i].count << "\n";
@@ -109,15 +114,35 @@ int main() {
 	std::cout << wallet << "\n";
 
 	string user;
+	
 	std::cin >> user;
 	for (int i = 0; i < goods.size(); i++)
-		if (user == goods[i].name)
+		if (user == goods[i].name && goods[i].count > 0)
 		{
-			std::cout << "Yes, it is in stock";
-			break;
+			std::cout << "Yes, it is in stock" << "\n";
+
+			int user;
+			std::cin >> user;
+
+			if (user <= goods[i].count) {
+				std::cout << "Yes, it is in stock" << "\n";
+				if ( goods[i].price*user  <= wallet) {
+					std::cout << "Yes" << " " << goods[i].price * user << "\n";
+				}
+				else {
+					std::cout << "Sorry, but we don't have this in stock" << "\n";
+					break;
+				}
+
+			}
+			else {
+				std::cout << "Sorry, but we don't have this in stock" << "\n";
+				break;
+			}
 		}
 		else {
-			std::cout << "Sorry, but we don't have this in stock";
+			std::cout << "Sorry, but we don't have this in stock" << "\n";
+			break;
 
 		}
 
