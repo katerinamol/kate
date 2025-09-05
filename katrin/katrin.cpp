@@ -98,52 +98,66 @@ int main() {
 		std::cout << user[i].name << " " << user[i].age << " " << user[i].pol << " " << user[i].naty << "\n";
 	}*/
 
-	goods.push_back({ "banana", 20, 30 });
+	goods.push_back({ "banana", 20, 30 }); 
 	goods.push_back({ "appless", 35 , 20 });
 	goods.push_back({ "oranges", 25, 15 });
 	goods.push_back({ "grape", 15, 25 });
 	goods.push_back({ "chizz", 0 , 200 });
-	for (int i = 0; i < goods.size(); i++)
-	{
-		std::cout << goods[i].name << " " << goods[i].price << " " << goods[i].count << "\n";
-
-	}
-
-
 	int wallet = 500;
-	std::cout << wallet << "\n";
+	string name;
 
-	string user;
-	
-	std::cin >> user;
-	for (int i = 0; i < goods.size(); i++)
-		if (user == goods[i].name && goods[i].count > 0)
+
+
+	while (true) {
+
+		for (int i = 0; i < goods.size(); i++)
 		{
-			std::cout << "Yes, it is in stock" << "\n";
+			std::cout << "(name) " << goods[i].name << " "<< "(price) " << goods[i].price << " " << "(count) " << goods[i].count << "\n";
 
-			int user;
-			std::cin >> user;
+		}
 
-			if (user <= goods[i].count) {
+
+		std::cout << wallet << "\n";
+
+
+		std::cin >> name;
+
+		for (int i = 0; i < goods.size(); i++) {
+
+
+			if (name == goods[i].name && goods[i].count > 0)
+			{
 				std::cout << "Yes, it is in stock" << "\n";
-				if ( goods[i].price*user  <= wallet) {
-					std::cout << "Yes" << " " << goods[i].price * user << "\n";
+
+				int u_count;
+
+				std::cin >> u_count;
+				
+				
+				
+
+				if (goods[i].price * u_count <= wallet)
+				{
+					wallet -= goods[i].price * u_count;
+
+					std::cout << "ALL PRICE\t" << goods[i].price * u_count << "\n" << "Your Money: " << wallet;
+					
+
+
+
 				}
 				else {
-					std::cout << "Sorry, but we don't have this in stock" << "\n";
+					std::cout << "Sorry, no MONEY" << "\n";
 					break;
 				}
 
 			}
 			else {
+
 				std::cout << "Sorry, but we don't have this in stock" << "\n";
 				break;
+
 			}
 		}
-		else {
-			std::cout << "Sorry, but we don't have this in stock" << "\n";
-			break;
-
-		}
-
+	}
 }
