@@ -98,7 +98,7 @@ int main() {
 		std::cout << user[i].name << " " << user[i].age << " " << user[i].pol << " " << user[i].naty << "\n";
 	}*/
 
-	goods.push_back({ "banana", 20, 30 });
+	goods.push_back({ "banana", 20, 30 }); 
 	goods.push_back({ "appless", 35 , 20 });
 	goods.push_back({ "oranges", 25, 15 });
 	goods.push_back({ "grape", 15, 25 });
@@ -115,60 +115,42 @@ int main() {
 		std::cout  <<  goods[i].name << "\t" << goods[i].price << "\t" << goods[i].count << "\n";
 
 	}
-	
 
+
+	int wallet = 500;
 	std::cout << wallet << "\n";
 
-		std::cin >> user;
+	string user;
+	
+	std::cin >> user;
+	for (int i = 0; i < goods.size(); i++)
+		if (user == goods[i].name && goods[i].count > 0)
+		{
+			std::cout << "Yes, it is in stock" << "\n";
 
-		for (int i = 0; i < goods.size(); i++) {
+			int user;
+			std::cin >> user;
 
-			if (user == goods[i].name && goods[i].count > 0)
-			{
+			if (user <= goods[i].count) {
 				std::cout << "Yes, it is in stock" << "\n";
-
-				int user;
-				std::cin >> user;
-
-				if (user <= goods[i].count) {
-
-					std::cout << "Yes, it is in stock" << "\n";
-
-					if (goods[i].price * user <= wallet) {
-						//чтобы отнималась количество и сумма от кошелька
-						std::cout << "yes" << " " << goods[i].price * user << "\n";
-						
-					}
-					else {
-						std::cout << "Sorry, but we don't have this in stock" << "\n";
-						break;
-					}
-
+				if ( goods[i].price*user  <= wallet) {
+					std::cout << "Yes" << " " << goods[i].price * user << "\n";
 				}
 				else {
 					std::cout << "Sorry, but we don't have this in stock" << "\n";
 					break;
 				}
+
 			}
-			/*else {
+			else {
 				std::cout << "Sorry, but we don't have this in stock" << "\n";
 				break;
-
-			}*/
+			}
 		}
-	}
+		else {
+			std::cout << "Sorry, but we don't have this in stock" << "\n";
+			break;
+
+		}
+
 }
-
-	//int main() {
-
-	//	int m[4]{ 7,6,-2,1 };
-	//	for (int i = 0; i < 4; i++) {
-	//		std::cout << m[i] << "\n";
-	//	}
-
-
-
-
-
-
-	//}
